@@ -1,0 +1,25 @@
+﻿Create a Flutter application with two screens to manage a list of users. The app should allow users to be added, updated, and deleted, with all user actions reflecting on the main screen.
+
+
+Screens:
+* Main Screen: Displays a list of users in a ListView.
+* Secondary Screen: Used for adding a new user or updating an existing user’s information.
+User Information: Each user should have the following details: Name (String), Email (String), Age (Integer)
+
+
+Main Screen Features:
+* The main screen should display a FloatingActionButton (FAB) for adding a new user.
+* When the FAB is pressed:
+   * Navigate to the secondary screen, which allows the user to input new user information.
+   * Upon successfully adding the user, close the secondary screen, return to the main screen, and display the new user at the top of the list.
+* Each user in the ListView should be tappable:
+   * Tapping on a user item should navigate to the secondary screen, displaying the user’s current details, allowing for updates.
+Secondary Screen Features:
+* When adding a new user, the fields should be empty, allowing the user to enter a name, email, and age.
+* When updating an existing user, the fields should display the current information of the selected user for editing.
+* Provide buttons to save or cancel changes:
+   * Save should validate inputs and, if successful, update the user list and navigate back to the main screen.
+   * Cancel should discard changes and navigate back to the main screen.
+Delete Functionality:
+* Apply the Dismissible widget to each item in the ListView on the main screen.
+* Swiping a user item left or right should delete the user from the list.

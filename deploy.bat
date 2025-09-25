@@ -1,0 +1,26 @@
+@echo off
+echo Building Flutter web app...
+call flutter build web --base-href "/multi_screen/"
+
+echo Switching to gh-pages branch...
+git checkout gh-pages 2>nul || git checkout --orphan gh-pages
+
+echo Cleaning gh-pages branch...
+git rm -rf . >nul 2>&1
+
+echo Copying web build files...
+xcopy ..\build\web\* . /E /H /Y
+
+echo Adding files to git...
+git add .
+
+echo Committing changes...
+git commit -m "Deploy Flutter web app"
+
+echo Pushing to GitHub...
+git push origin gh-pages
+
+echo Switching back to master...
+git checkout master
+
+echo Deployment complete!
